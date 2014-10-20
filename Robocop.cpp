@@ -6,24 +6,21 @@ using namespace std;
 
 const int Robocop::CIB_MAX = 4;
 int Robocop::cibAtual = 0;
-//const vector<int> Robocop::diretivas();
 
 Robocop::Robocop(float velocidade,float tempoMaxCarga, float carga, const string &id, float velocidadeAtual)
-:VELOCIDADE_MAX(velocidade), TEMPO_MAX_CARGA(tempoMaxCarga), dataCriacao(8,10,2014)
+:VELOCIDADE_MAX(velocidade), TEMPO_MAX_CARGA(tempoMaxCarga),
+				dataCriacao(8,10,2014), armaRobo("Colt", 12), armadura("Aco", 4)
 {
 	setId(id);
 	setTempoCarga(carga);
 	setCibAtual();
 	setVelocidadeAtual(velocidadeAtual);
-	//setDataCriacao(criacao);
-	//dataCriacao.
-	
-  
-	//setVelocidadeAtual(velocidadeAtual);
+
 }
 
 Robocop::Robocop(const Robocop &robo)
-:VELOCIDADE_MAX(robo.VELOCIDADE_MAX), TEMPO_MAX_CARGA(robo.TEMPO_MAX_CARGA), dataCriacao(8,10,2014)
+:VELOCIDADE_MAX(robo.VELOCIDADE_MAX), TEMPO_MAX_CARGA(robo.TEMPO_MAX_CARGA),
+				dataCriacao(robo.dataCriacao), armaRobo(robo.armaRobo), armadura(robo.armadura)
 {
 	setCibAtual();
 	this->id = robo.id;
@@ -32,7 +29,7 @@ Robocop::Robocop(const Robocop &robo)
 		
 }
 Robocop::Robocop()
-:VELOCIDADE_MAX(50.0), TEMPO_MAX_CARGA(15), dataCriacao(8,10,2014)
+:VELOCIDADE_MAX(50.0), TEMPO_MAX_CARGA(15), dataCriacao(8,10,2014), armaRobo("Colt", 12), armadura("Aco", 4)
 {
 	setCibAtual();
 	this->id = "Name";
@@ -54,17 +51,17 @@ void Robocop::setId(const string &id)
 		}
 		if(cont == tam)
 		{
-				this->id = id;
+			this->id = id;
 		}
 		else
 		{
-				cout << "Nome Invalido!!";
+			cout << "Nome Invalido!!";
 		}
 }
 
 string Robocop::getId() const
 {
-	return this->id;
+		return this->id;
 }
 void Robocop::setTempoCarga(float carga)
 {
@@ -148,10 +145,13 @@ int Robocop::recarrega()
 }
 void Robocop::mostrarAtributos() const
 {
-	cout << "Data Criação: " << dataCriacao.getDia()<< "/ " << dataCriacao.getMes()<< " /"<< dataCriacao.getAno();
-	cout << "Id: " << getId();
-	cout << "Carga da Bateria: " << getTempoCarga() << "h";
-	cout << "VelocidadeAtual " << getVelocidadeAtual() << "Km/h";
+	cout << endl << "Data Criacao: " << dataCriacao.getDia()
+							<< "/ " << dataCriacao.getMes()<< " /"<< dataCriacao.getAno() << endl;
+	cout << "Id: " << getId() << endl;
+	cout << "Carga da Bateria: " << getTempoCarga() << "h" << endl;
+	cout << "VelocidadeAtual: " << getVelocidadeAtual() << "Km/h" << endl;
+	cout << "Arma: " << armaRobo.getTipo() << endl;
+	cout << "Armadura: " << armadura.getMaterial() << endl;
 }
 void Robocop::criado()
 {
@@ -165,6 +165,11 @@ int Robocop::getCibMax() const
 {
 	return this->CIB_MAX;
 }
+//Robocop *Robocop::criarNovoCiborgue()
+//{	
+//	cout << "";
+//}
+
 int Robocop::menu() const
 {
 	int resp;
@@ -174,4 +179,19 @@ int Robocop::menu() const
 	return resp;
 }
 
+Diretivas * Robocop::AdicionarDiretiva(string texto)
+{
+	Diretivas *novo = new Diretivas(texto);
+	
+	return novo;
+}
+ 
+ 
+Robocop::~Robocop()
+{	
+}
+void Robocop::imprimirDiretivas(const Robocop& a) const
+{
+	cout << a.diretivas->getTextoDiretiva()<< endl;
+}
 
