@@ -22,7 +22,7 @@
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
       </Environment>
-      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="yes">
         <DebuggerSearchPaths/>
         <PostConnectCommands/>
         <StartupCommands/>
@@ -61,7 +61,7 @@
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
       </Environment>
-      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="yes">
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
         <DebuggerSearchPaths/>
         <PostConnectCommands/>
         <StartupCommands/>
@@ -94,13 +94,13 @@
     <File Name="main.cpp"/>
     <File Name="Robocop.h"/>
     <File Name="Robocop.cpp"/>
-    <File Name="Data.cpp"/>
-    <File Name="Data.h"/>
-    <File Name="Arma.h"/>
-    <File Name="Arma.cpp"/>
+    <File Name="Robo.h"/>
+    <File Name="Robo.cpp"/>
     <File Name="Armadura.h"/>
     <File Name="Armadura.cpp"/>
-    <File Name="Diretivas.h"/>
-    <File Name="Diretivas.cpp"/>
+    <File Name="Data.h"/>
+    <File Name="Data.cpp"/>
+    <File Name="Arma.h"/>
+    <File Name="Arma.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

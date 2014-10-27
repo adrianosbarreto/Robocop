@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/Robocop.cpp.o ./Debug/Data.cpp.o ./Debug/Arma.cpp.o ./Debug/Armadura.cpp.o ./Debug/Diretivas.cpp.o   
+./Debug/main.cpp.o ./Debug/Robocop.cpp.o ./Debug/Robo.cpp.o ./Debug/Armadura.cpp.o ./Debug/Data.cpp.o ./Debug/Diretivas.cpp.o ./Debug/Arma.cpp.o   

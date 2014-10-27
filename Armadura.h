@@ -6,6 +6,8 @@ using std::string;
 
 class Armadura
 {
+	
+
 private:
 	string material;
 	
@@ -26,3 +28,4 @@ public:
 };
 
 #endif // ARMADURA_H
+

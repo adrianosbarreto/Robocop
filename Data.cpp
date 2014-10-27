@@ -66,5 +66,35 @@ int Data::VerificaDia(int diaTeste) const
     
 }
 
+ostream &operator<<(ostream &output, const Data &data)
+{
+	output << data.dia << "/" << data.mes << "/" << data.ano;
+	return output;
+}
+bool Data::operator== (const Data &data) const
+{
+	
+	if(this->dia == data.dia)
+	{
+		if(this->mes == data.mes)
+		{
+			if(this->ano == data.ano)
+			{
+				return true;
+			}
+		}
+	}
+	else
+	{
+		return false;
+	}
+	
+}
+void Data::operator= ( const Data &data )
+{
+	this->mes = data.mes;
+	this->dia = data.dia;
+	this->ano = data.ano;
+}
 
 
