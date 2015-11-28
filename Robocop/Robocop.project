@@ -96,5 +96,11 @@
     <File Name="Robocop.cpp"/>
     <File Name="Data.cpp"/>
     <File Name="Data.h"/>
+    <File Name="Arma.cpp"/>
+    <File Name="Arma.h"/>
+    <File Name="Armadura.cpp"/>
+    <File Name="Armadura.h"/>
+    <File Name="Diretivas.cpp"/>
+    <File Name="Diretivas.h"/>
   </VirtualDirectory>
 </CodeLite_Project>

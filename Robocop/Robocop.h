@@ -2,6 +2,11 @@
 #define ROBOCOP_H
 
 #include "Data.h"
+#include "Arma.h"
+#include "Diretivas.h"
+#include "Armadura.h"
+
+
 
 #include <string>
 using std::string;
@@ -12,7 +17,7 @@ using std::vector;
 #include <iostream>
 using std::ostream;
 
-class Robocop
+class Robocop  //: public Robo
 {
 	
 friend ostream &operator<< ( ostream &output, const Robocop &robocop );
@@ -20,9 +25,10 @@ friend ostream &operator<< ( ostream &output, const Robocop &robocop );
 private:
 	static int NUM_ROBOCOP;
 	const static int NUM_DIRETIVAS = 3;
-	const static float VELOCIDADE_MAX; //Const static
-	const static string DIRETIVAS[NUM_DIRETIVAS]; //Array 
-	static vector<string> PRESOS; //vector push_back
+	const static float VELOCIDADE_MAX = 80.0; //Const static
+	const static Diretivas diretivas[NUM_DIRETIVAS];
+	vector<Arma> armas;
+	vector<Armadura> armaduras;
 	static vector<Robocop> ROBOCOPS;
 	Data dataCriacao; //Composição Classe Data
 	float velocidade;
@@ -32,14 +38,15 @@ private:
 public:
 	void operator =( const Robocop &origem );
 
-	Robocop( const string &id );
+	Robocop(  const string&  );
 	Robocop( const Robocop &); //Construtor de Copia
-	Robocop( const string &id = "Desconhecido", float velocidade = 0.0, float tempoCarga = 0.0, const Data &dataCricao = Data() );
+	Robocop( const string &id = "deconhecido", float velocidade = 0.0, float tempoCarga= 0.0, const Data &dataCricao = Data(),
+					const Arma &arma = Arma(), const Armadura &armadura = Armadura());
 	
 	~Robocop();
 	
 	void setId( const string &id );
-	string getId() const;
+	const string getId() const;
 	
 	void setTempoCarga( float carga );
 	float getTempoCarga() const;
@@ -47,11 +54,15 @@ public:
 	void setVelocidade( float velocidade );
 	float getVelocidade() const;
 	
-	inline static void adicionarPreso( const string &preso ){ Robocop::PRESOS.push_back( preso ); }; //função static, passagem de parametro usando ponteiro.
+	inline void adicionarArma( const Arma &arma ){ armas.push_back( arma ); };
+	inline void adicionarArmadura( const Armadura &armadura ){ armaduras.push_back( armadura ); };
 	void recarregar();
 	int menuPrincipal() const; 
 	int menuSecundario() const;
 	static void mostrarDiretiva();
+	void mostrarArmas() const;
+	void mostrarArmaduras() const;
+	void imprimirAtributos() const;
 	static void adicionarRobocop( const Robocop & );
 	static void imprimirRobocop();
 	static void clonar( int );

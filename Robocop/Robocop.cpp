@@ -3,36 +3,46 @@
 
 using namespace std;
 
-const float Robocop::VELOCIDADE_MAX = 80.0;
-const string Robocop::DIRETIVAS[] = {"Nao Matar", "Nao Desobecer", "Nao Descuprir as outras 2 Diretivas"};
-vector<string> Robocop::PRESOS;
+const Diretivas Robocop::diretivas[NUM_DIRETIVAS] = {Diretivas("Nao Matar"),
+										Diretivas("Nao desobedecer"), Diretivas("Cumprir as Leis")};
 vector<Robocop> Robocop::ROBOCOPS;
 int Robocop::NUM_ROBOCOP = 0;
 
-Robocop::Robocop(  const string &id )
-:dataCriacao( 1, 1, 2015 )
+Robocop::Robocop( const string& id)
+: dataCriacao( 1, 1, 2015 )
 {
-	setId( id );
+	this->id = new string( id );
 	this->velocidade = 0.0;
 	this->tempoCarga = 0.0;
+	adicionarArma( Arma() );
+	adicionarArmadura( Armadura() );
 	Robocop::NUM_ROBOCOP++;
 }
 
-Robocop::Robocop( const string &id, float velocidade, float tempoCarga, const Data &dataCricao )
+Robocop::Robocop( const string &id, float velocidade, float tempoCarga, const Data &dataCricao,
+					const Arma &arma, const Armadura &armadura)
 :dataCriacao( dataCricao )
 {
 	setId( id );
 	setVelocidade( velocidade );
 	setTempoCarga( tempoCarga );
+	adicionarArma( arma );
+	adicionarArmadura( armadura );
 	Robocop::NUM_ROBOCOP++;
 }
 
 Robocop::Robocop( const Robocop &origem )
 :dataCriacao( origem.dataCriacao )
 {
-	this->id = new string( *origem.id );
+	this->id = new string(*origem.id);
 	this->velocidade = origem.velocidade;
 	this->tempoCarga = origem.tempoCarga;
+	for(unsigned int i = 0; i < armaduras.size(); i++){
+		this->armaduras[i] = origem.armaduras[i];
+	}
+	for(unsigned int i = 0; i < armaduras.size(); i++){
+		this->armas[i] = origem.armas[i];
+	}
 	Robocop::NUM_ROBOCOP++;
 }
 
@@ -45,10 +55,16 @@ Robocop::~Robocop()
 void Robocop::operator= ( const Robocop &origem )
 {
 	this->dataCriacao = origem.dataCriacao;
-	this->id =new string( *origem.id ) ;
+	this->id = new string( *origem.id );
 	this->velocidade = origem.velocidade;
 	this->tempoCarga = origem.tempoCarga;
-	Robocop::NUM_ROBOCOP++;
+	for(unsigned int i = 0; i < armaduras.size(); i++){
+		this->armaduras[i] = origem.armaduras[i];
+	}
+	for(unsigned int i = 0; i < armaduras.size(); i++){
+		this->armas[i] = origem.armas[i];
+	}
+	
 }
 
 ostream &operator<< ( ostream &output, const Robocop &robocop ){
@@ -56,15 +72,15 @@ ostream &operator<< ( ostream &output, const Robocop &robocop ){
 			<< "-NOME: \t\t\t" << *robocop.id << "\n"
 			<< "-DATA CRIACAO: \t\t" << robocop.dataCriacao << "\n"
 			<< "-CARGA DA BATERIA: \t" << robocop.tempoCarga << "h" << "\n"
-			<< "-VELOCIDADE : \t\t" << robocop.velocidade << "km/h" << "\n"
-			<< "-------------------------------------------------------------------\n";
+			<< "-VELOCIDADE : \t\t" << robocop.velocidade << "km/h" << "\n";
+			
 	return output;
 }
 
 void Robocop::setId(const string &id)
 {
 	int cont = 0, i, tam = id.size();
-	string aux = *id;
+	string aux = id;
 	if( tam <= 45 ){
 		for ( i = 0 ; i < tam; i++ ) //Verifica se nao existe Numeros ou caracteres especiais no Nome
 		{
@@ -75,7 +91,7 @@ void Robocop::setId(const string &id)
 		}
 		if( cont == tam )
 		{
-				this->id = aux;
+				this->id = new string(aux);
 		}
 		else
 		{
@@ -86,13 +102,13 @@ void Robocop::setId(const string &id)
 	else
 	{
 		cout << "Erro. Nome muito grande.";
-		this->id = ew string(aux.substr( 1, 45 ));		
+		this->id = new string(aux.substr( 1, 45 ));		
 	}
 }
 
-string Robocop::getId() const
+const string Robocop::getId() const
 {
-	return this->id;
+	return *this->id;
 }
 
 void Robocop::setTempoCarga(float carga)
@@ -152,15 +168,31 @@ void Robocop::clonar( int posicao )
 	ROBOCOPS.push_back( ROBOCOPS[posicao] );
 }
 
-void Robocop::mostrarDiretiva() 
+void Robocop::mostrarDiretiva()
 {
-	int i;
-	for( i = 0; i < Robocop::NUM_DIRETIVAS ; i++)
+
+	for( unsigned int i = 0; i < Robocop::NUM_DIRETIVAS ; i++)
 	{
-		cout << DIRETIVAS[i] << "\n" << endl;
+		cout << diretivas[i] << "\n" << endl;
+	}
+}
+void Robocop::mostrarArmas() const
+{
+
+	for( unsigned int i = 0; i < armas.size() ; i++)
+	{
+		cout << armas[i] << "\n" << endl;
 	}
 }
 
+void Robocop::mostrarArmaduras() const
+{
+
+	for( unsigned int i = 0; i < armaduras.size() ; i++)
+	{
+		cout << armaduras[i] << "\n" << endl;
+	}
+}
 
 void Robocop::adicionarRobocop(const Robocop &novo)
 {
@@ -175,6 +207,13 @@ void Robocop::imprimirRobocop()
 		cout << ROBOCOPS[i];
 	}
 }
+void Robocop::imprimirAtributos() const
+{
+		cout << *this;
+		mostrarArmaduras();
+		mostrarArmas();
+		cout << "-------------------------------------------------------------------\n";
+}
 
 int Robocop::menuPrincipal() const
 {
@@ -187,9 +226,12 @@ int Robocop::menuPrincipal() const
 int Robocop::menuSecundario() const
 {
 	int resp;
-	cout << "1 - Adicionar Pessoa Presa\n" << endl;
-	cout << "2 - Modificar Velocidade\n";
-	cout << "3 - Ver Diretivas\n";
+	cout << "1 - Modificar Velocidade\n";
+	cout << "2 - Ver Diretivas\n";
+	cout << "3 - Adicionar Arma\n";
+	cout << "4 - Adiconar Armadura\n";
+	cout << "5 -  Mostrar Atributos\n";
+	cout << "Resposta = ";
 	cin >> resp;
 	return resp;
 }
