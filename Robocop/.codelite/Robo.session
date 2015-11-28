@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\Robo.workspace">
-  <int Value="4" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\Robo.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Robo.workspace">
+  <int Value="3" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Robo.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\main.cpp" Name="FileName"/>
-      <int Value="11" Name="FirstVisibleLine"/>
-      <int Value="16" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\Armadura.h" Name="FileName"/>
+      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\main.cpp" Name="FileName"/>
       <int Value="4" Name="FirstVisibleLine"/>
-      <int Value="13" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
+      <int Value="22" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="16:3"/>
+      </wxArrayString>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\Armadura.cpp" Name="FileName"/>
-      <int Value="38" Name="FirstVisibleLine"/>
-      <int Value="16" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\Diretivas.h" Name="FileName"/>
-      <int Value="2" Name="FirstVisibleLine"/>
-      <int Value="17" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3\Diretivas.cpp" Name="FileName"/>
+      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Robo.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="4" Name="CurrentLine"/>
+      <int Value="27" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Robo.h" Name="FileName"/>
+      <int Value="7" Name="FirstVisibleLine"/>
+      <int Value="19" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Robocop.cpp" Name="FileName"/>
+      <int Value="40" Name="FirstVisibleLine"/>
+      <int Value="74" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Robocop.h" Name="FileName"/>
+      <int Value="43" Name="FirstVisibleLine"/>
+      <int Value="56" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4\Armadura.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

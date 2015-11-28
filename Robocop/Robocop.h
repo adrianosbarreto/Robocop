@@ -5,7 +5,7 @@
 #include "Arma.h"
 #include "Diretivas.h"
 #include "Armadura.h"
-
+#include "Robo.h"
 
 
 #include <string>
@@ -17,32 +17,44 @@ using std::vector;
 #include <iostream>
 using std::ostream;
 
-class Robocop  //: public Robo
+class Robocop : public Robo
 {
 	
 friend ostream &operator<< ( ostream &output, const Robocop &robocop );
 	
 private:
 	static int NUM_ROBOCOP;
+
 	const static int NUM_DIRETIVAS = 3;
+	
 	const static float VELOCIDADE_MAX = 80.0; //Const static
+	
+	//const static string DIRETIVAS[NUM_DIRETIVAS]; //Array
 	const static Diretivas diretivas[NUM_DIRETIVAS];
+	
 	vector<Arma> armas;
+	
 	vector<Armadura> armaduras;
+	
+	//static vector<string> PRESOS; //vector push_back
+	
 	static vector<Robocop> ROBOCOPS;
+	
 	Data dataCriacao; //Composição Classe Data
+	
 	float velocidade;
+	
 	float tempoCarga;
+	
 	string *id; //String
 
 public:
 	void operator =( const Robocop &origem );
 
-	Robocop(  const string&  );
+	Robocop( const string& );
 	Robocop( const Robocop &); //Construtor de Copia
-	Robocop( const string &id = "deconhecido", float velocidade = 0.0, float tempoCarga= 0.0, const Data &dataCricao = Data(),
-					const Arma &arma = Arma(), const Armadura &armadura = Armadura());
-	
+	Robocop( const string& = "", const string& = "desconhecido", float = 0.0, float = 0.0,
+							const Data&= Data(),const Arma & = Arma(), const Armadura & = Armadura());
 	~Robocop();
 	
 	void setId( const string &id );

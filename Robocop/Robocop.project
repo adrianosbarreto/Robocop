@@ -102,5 +102,7 @@
     <File Name="Armadura.h"/>
     <File Name="Diretivas.cpp"/>
     <File Name="Diretivas.h"/>
+    <File Name="Robo.h"/>
+    <File Name="Robo.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

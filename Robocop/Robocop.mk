@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Robocop
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3"
-ProjectPath            := "C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att3"
+WorkspacePath          := "C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4"
+ProjectPath            := "C:\Users\Adriano\Desktop\Codigos\Prog\Robocop att4"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Adriano
-Date                   :=27/08/2015
+Date                   :=28/08/2015
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/MinGW-4.8.1/bin/g++.exe
 SharedObjectLinkerName :=C:/MinGW-4.8.1/bin/g++.exe -shared -fPIC
@@ -63,7 +63,7 @@ AS       := C:/MinGW-4.8.1/bin/as.exe
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
 UNIT_TEST_PP_SRC_DIR:=C:\UnitTest++-1.3
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Robocop.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arma.cpp$(ObjectSuffix) $(IntermediateDirectory)/Armadura.cpp$(ObjectSuffix) $(IntermediateDirectory)/Diretivas.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Robocop.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arma.cpp$(ObjectSuffix) $(IntermediateDirectory)/Armadura.cpp$(ObjectSuffix) $(IntermediateDirectory)/Diretivas.cpp$(ObjectSuffix) $(IntermediateDirectory)/Robo.cpp$(ObjectSuffix) 
 
 
 
@@ -95,7 +95,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att3/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 
@@ -103,7 +103,7 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
 
 $(IntermediateDirectory)/Robocop.cpp$(ObjectSuffix): Robocop.cpp $(IntermediateDirectory)/Robocop.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att3/Robocop.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Robocop.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/Robocop.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Robocop.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Robocop.cpp$(DependSuffix): Robocop.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Robocop.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Robocop.cpp$(DependSuffix) -MM "Robocop.cpp"
 
@@ -111,7 +111,7 @@ $(IntermediateDirectory)/Robocop.cpp$(PreprocessSuffix): Robocop.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Robocop.cpp$(PreprocessSuffix) "Robocop.cpp"
 
 $(IntermediateDirectory)/Data.cpp$(ObjectSuffix): Data.cpp $(IntermediateDirectory)/Data.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att3/Data.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/Data.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Data.cpp$(DependSuffix): Data.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Data.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Data.cpp$(DependSuffix) -MM "Data.cpp"
 
@@ -119,7 +119,7 @@ $(IntermediateDirectory)/Data.cpp$(PreprocessSuffix): Data.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Data.cpp$(PreprocessSuffix) "Data.cpp"
 
 $(IntermediateDirectory)/Arma.cpp$(ObjectSuffix): Arma.cpp $(IntermediateDirectory)/Arma.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att3/Arma.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arma.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/Arma.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Arma.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Arma.cpp$(DependSuffix): Arma.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Arma.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Arma.cpp$(DependSuffix) -MM "Arma.cpp"
 
@@ -127,7 +127,7 @@ $(IntermediateDirectory)/Arma.cpp$(PreprocessSuffix): Arma.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arma.cpp$(PreprocessSuffix) "Arma.cpp"
 
 $(IntermediateDirectory)/Armadura.cpp$(ObjectSuffix): Armadura.cpp $(IntermediateDirectory)/Armadura.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att3/Armadura.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Armadura.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/Armadura.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Armadura.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Armadura.cpp$(DependSuffix): Armadura.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Armadura.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Armadura.cpp$(DependSuffix) -MM "Armadura.cpp"
 
@@ -135,12 +135,20 @@ $(IntermediateDirectory)/Armadura.cpp$(PreprocessSuffix): Armadura.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Armadura.cpp$(PreprocessSuffix) "Armadura.cpp"
 
 $(IntermediateDirectory)/Diretivas.cpp$(ObjectSuffix): Diretivas.cpp $(IntermediateDirectory)/Diretivas.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att3/Diretivas.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Diretivas.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/Diretivas.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Diretivas.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Diretivas.cpp$(DependSuffix): Diretivas.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Diretivas.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Diretivas.cpp$(DependSuffix) -MM "Diretivas.cpp"
 
 $(IntermediateDirectory)/Diretivas.cpp$(PreprocessSuffix): Diretivas.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Diretivas.cpp$(PreprocessSuffix) "Diretivas.cpp"
+
+$(IntermediateDirectory)/Robo.cpp$(ObjectSuffix): Robo.cpp $(IntermediateDirectory)/Robo.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Adriano/Desktop/Codigos/Prog/Robocop att4/Robo.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Robo.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Robo.cpp$(DependSuffix): Robo.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Robo.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Robo.cpp$(DependSuffix) -MM "Robo.cpp"
+
+$(IntermediateDirectory)/Robo.cpp$(PreprocessSuffix): Robo.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Robo.cpp$(PreprocessSuffix) "Robo.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

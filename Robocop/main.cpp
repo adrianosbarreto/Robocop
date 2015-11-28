@@ -10,9 +10,18 @@ using std::cin;
 
 int main(int argc, char **argv)
 {	
+	Robocop robo( "C4","ZIM", 10.0, 10.0, Data( 04,12,1995 ), Arma( "Colt", 5 ), Armadura("Aco", 40) );
+	Robo *ptr_robo = &robo;
 	
-	Robocop::adicionarRobocop( Robocop( "ZIM", 10.0, 10.0, Data(04,12,1995), Arma("Colt", 5), Armadura("Aco", 40) ) );
-	Robocop::adicionarRobocop( Robocop( "ZAM", 10.0, 10.0, Data(04,12,2000), Arma("Colt", 5), Armadura("Aco", 40) ) );
+	Robocop::adicionarRobocop( 	robo );
+	Robocop::adicionarRobocop( Robocop( "C4", "ZAM", 10.0, 10.0, Data( 04,12,2000 ), Arma( "Colt", 5 ), Armadura( "Aco", 40 ) ) );
+	
+
+	(static_cast<Robocop*>(ptr_robo))->adicionarArma( Arma( "Winchester", 10 ) );
+	(static_cast<Robocop*>(ptr_robo))->adicionarArmadura( Armadura( "Ouro", 50 ) );
+	(static_cast<Robocop*>(ptr_robo))->imprimirAtributos();
+	
+	
 	
 	int resp;
 	do
@@ -22,7 +31,7 @@ int main(int argc, char **argv)
 					case 1:
 					{
 						//criar
-						Robocop robocop1( "TIM", 10.0, 10.0, Data( 04,12,1995 ), Arma("Colt", 5), Armadura("Aco", 40) );
+						Robocop robocop1( "C4", "TIM", 10.0, 10.0, Data( 04,12,1995 ), Arma("Colt", 5), Armadura("Aco", 40) );
 						Robocop::adicionarRobocop( robocop1 );
 						do
 						{

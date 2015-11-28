@@ -8,8 +8,8 @@ const Diretivas Robocop::diretivas[NUM_DIRETIVAS] = {Diretivas("Nao Matar"),
 vector<Robocop> Robocop::ROBOCOPS;
 int Robocop::NUM_ROBOCOP = 0;
 
-Robocop::Robocop( const string& id)
-: dataCriacao( 1, 1, 2015 )
+Robocop::Robocop( const string& id )
+: Robo(), dataCriacao( 1, 1, 2015 )
 {
 	this->id = new string( id );
 	this->velocidade = 0.0;
@@ -19,9 +19,9 @@ Robocop::Robocop( const string& id)
 	Robocop::NUM_ROBOCOP++;
 }
 
-Robocop::Robocop( const string &id, float velocidade, float tempoCarga, const Data &dataCricao,
+Robocop::Robocop( const string&modelo, const string &id, float velocidade, float tempoCarga, const Data &dataCricao,
 					const Arma &arma, const Armadura &armadura)
-:dataCriacao( dataCricao )
+: Robo(modelo), dataCriacao( dataCricao )
 {
 	setId( id );
 	setVelocidade( velocidade );
@@ -32,7 +32,7 @@ Robocop::Robocop( const string &id, float velocidade, float tempoCarga, const Da
 }
 
 Robocop::Robocop( const Robocop &origem )
-:dataCriacao( origem.dataCriacao )
+: Robo(origem), dataCriacao( origem.dataCriacao )
 {
 	this->id = new string(*origem.id);
 	this->velocidade = origem.velocidade;
@@ -46,14 +46,9 @@ Robocop::Robocop( const Robocop &origem )
 	Robocop::NUM_ROBOCOP++;
 }
 
-Robocop::~Robocop()
-{
-	delete id;
-	Robocop::NUM_ROBOCOP--;
-}
-
 void Robocop::operator= ( const Robocop &origem )
 {
+	Robo::operator= ( origem );
 	this->dataCriacao = origem.dataCriacao;
 	this->id = new string( *origem.id );
 	this->velocidade = origem.velocidade;
@@ -67,8 +62,8 @@ void Robocop::operator= ( const Robocop &origem )
 	
 }
 
-ostream &operator<< ( ostream &output, const Robocop &robocop ){
-	output	<< "-----------------------------ROBOCOP-------------------------------" << "\n"
+ostream &operator<< ( ostream &output, const Robocop &robocop ){ 
+	output << 	static_cast<Robo>(robocop)
 			<< "-NOME: \t\t\t" << *robocop.id << "\n"
 			<< "-DATA CRIACAO: \t\t" << robocop.dataCriacao << "\n"
 			<< "-CARGA DA BATERIA: \t" << robocop.tempoCarga << "h" << "\n"
@@ -209,10 +204,12 @@ void Robocop::imprimirRobocop()
 }
 void Robocop::imprimirAtributos() const
 {
-		cout << *this;
+		cout << "-----------------------------ROBOCOP-------------------------------" << "\n";
+		Robo::imprimirAtributos();
+		cout << this->id;
 		mostrarArmaduras();
 		mostrarArmas();
-		cout << "-------------------------------------------------------------------\n";
+		cout << "-------------------------------------------------------------------------\n";
 }
 
 int Robocop::menuPrincipal() const
@@ -244,6 +241,13 @@ Robocop Robocop::getRobocop( int posicao )
 {
 	return ROBOCOPS[posicao];
 }
+
+Robocop::~Robocop()
+{
+	delete id;
+	Robocop::NUM_ROBOCOP--;
+}
+
 
 
 

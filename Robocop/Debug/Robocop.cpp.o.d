@@ -1,5 +1,5 @@
 Debug/Robocop.cpp.o: Robocop.cpp Robocop.h Data.h Arma.h Diretivas.h \
- Armadura.h
+ Armadura.h Robo.h
 
 Robocop.h:
 
@@ -10,3 +10,5 @@ Arma.h:
 Diretivas.h:
 
 Armadura.h:
+
+Robo.h:
