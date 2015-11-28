@@ -7,6 +7,7 @@
 #include "Armadura.h"
 #include "Robo.h"
 
+#include <stdlib.h>
 
 #include <string>
 using std::string;
@@ -51,10 +52,11 @@ private:
 public:
 	void operator =( const Robocop &origem );
 
-	Robocop( const string& );
+	Robocop( const string& id );
 	Robocop( const Robocop &); //Construtor de Copia
-	Robocop( const string& = "", const string& = "desconhecido", float = 0.0, float = 0.0,
-							const Data&= Data(),const Arma & = Arma(), const Armadura & = Armadura());
+	Robocop( const string & ="versao1",  const string & ="00000", bool = false, const string&= "desconhecido",
+					float= 0.0, float = 0.0, const Data&= Data(),const Arma & = Arma(), const Armadura & =Armadura() );
+	
 	~Robocop();
 	
 	void setId( const string &id );
@@ -80,6 +82,8 @@ public:
 	static void clonar( int );
 	static int getNumMax();
 	static Robocop getRobocop( int );
+	bool realizarFuncao();
+	
 };
 
 #endif // ROBOCOP_H

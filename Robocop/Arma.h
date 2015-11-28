@@ -15,7 +15,6 @@ class Arma
 
 friend ostream &operator<< ( ostream &output, const Arma &arma );
 	
-	
 private:
 	const static int NUM_MAX_BALAS; 	//Quantidade suportada de balas.
 	int *numAtualBalas; 					//Quantidade atual de balas.

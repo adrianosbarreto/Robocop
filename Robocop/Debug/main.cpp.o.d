@@ -1,14 +1,20 @@
-Debug/main.cpp.o: main.cpp Robocop.h Data.h Arma.h Diretivas.h Armadura.h \
- Robo.h
+Debug/main.cpp.o: main.cpp Exterminador.h Robo.h Dispositivo.h Arma.h \
+ Robocop.h Data.h Diretivas.h Armadura.h Ultron.h
+
+Exterminador.h:
+
+Robo.h:
+
+Dispositivo.h:
+
+Arma.h:
 
 Robocop.h:
 
 Data.h:
 
-Arma.h:
-
 Diretivas.h:
 
 Armadura.h:
 
-Robo.h:
+Ultron.h:

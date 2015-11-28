@@ -78,8 +78,8 @@ void Arma::atributosArma() const
 }
 ostream &operator<< ( ostream &output, const Arma &arma )
 {
-	output 	<< "\nTipo da Arma: " << arma.tipo
-			<< "\nQuantidade de Balas: " << *arma.numAtualBalas << "\n";
+	output 	<< "\nTIPO DE ARMA:\t\t" << arma.tipo
+					<< "\nQUANTIDADE BALAS:\t" << *arma.numAtualBalas;
 	return output;
 }
 void Arma::operator= ( const Arma &origem)

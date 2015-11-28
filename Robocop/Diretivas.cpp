@@ -52,7 +52,7 @@ Diretivas::~Diretivas()
 
 ostream &operator<< ( ostream &output, const Diretivas &diretiva )
 {
-	output 	<< "\nTexto da Diretiva: " << *diretiva.textoDiretiva << "\n";
+	output 	<< "\nTEXTO DIRETIVA: " << *diretiva.textoDiretiva;
 	return output;
 }
 void Diretivas::operator= ( const Diretivas &origem )

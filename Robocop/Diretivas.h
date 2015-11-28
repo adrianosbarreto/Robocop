@@ -21,7 +21,7 @@ private:
 	const static int NUM_MAX_DIRETIVAS;
 	
 public:
-	Diretivas(const string &texto);
+	Diretivas(const string &texto );
 	Diretivas();
 	Diretivas(const Diretivas &origem);
 	~Diretivas();

@@ -54,13 +54,13 @@ int Armadura::getResistencia()const
 
 ostream &operator<< ( ostream &output, const Armadura &armadura )
 {
-	output 	<< "\nMaterial Armadura: " << armadura.material 
-			<< "\nResistencia Armadura: " << *armadura.resistencia << "\n";
+	output 	<< "\nMATERIAL ARMADURA:\t" << armadura.material 
+			<< "\nRESISTENCIA ARMADURA:\t" << *armadura.resistencia;
 	return output;
 }
 void Armadura::operator= ( const Armadura &origem )
 {
-	this->material = origem.material ;
+	this->material = origem.material;
 	this->resistencia = new int( *origem.resistencia );
 }
 
